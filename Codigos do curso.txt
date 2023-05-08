@@ -1,0 +1,208 @@
+O que preciso memorizar em css
+-------------------------------------
+
+*Manipular os Elementos em linha e em bloco, conforme a necessidade
+
+posicionamento de elementos e itens (é o que mais apanho)
+
+Margin - paddin - display
+
+espaçamento interno e externo
+
+bordas
+-------------------------------------------------------------///----------------------------------------------------------------------
+HEADER
+MAIN
+FOOTER
+----------------------------------------------------------- * MENU * -----------------------------------------------------------------
+
+header
+nav
+
+???????????????????????	
+	
+usando a tag <a>
+é mais fácil de manipular
+
+
+-------------------------------------------------------------///----------------------------------------------------------------------
+
+--------------------------------------------------------- * BORDAS * -----------------------------------------------------------------
+
+
+Todos os elementos possuem em volta deles: 
+
+Padding, 	      //Padding é a camada entre o conteúdo e a borda (é a pele do conteúdo)
+Border,           //É a borda do elemento (como se fosse a pele do pedding)
+Margin            //É a borda da borda (é a parte externa da borda)
+
+
+-------------------------------------------------------------///----------------------------------------------------------------------
+
+--------------------------------------------------------- * BORDAS * -----------------------------------------------------------------
+
+*BORDAS
+
+ border: 2px solid #22d4fd; 
+
+//2PX é o tamanho,
+
+//Solid é o tipo de borda 
+//Na w3s - CSS Borders - tem todas as dicas sobre diversos tipos de bordas. 
+
+//#22d4fd é a cor
+---------------------------------
+EXEMPLO DE CÓDIGO
+
+    border: 2px solid #22d4fd;
+    border-radius: 10px;    
+    padding: 10px;
+
+
+-------------------------------------------------//////////////////////////////------------------------------------------------------ 
+
+--------------------------------------------------------- * BOTÕES * -----------------------------------------------------------------
+EXEMPLO DE PROGRAMAÇÃO PARA BOTÕES
+   
+    border: 2px solid #22d4fd;
+    /* background-color: #22d4fd; */
+    width: 280px;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 24px;
+    padding: 21.5px 0;
+    color: #f6f6f6;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+........................................................... * Hover *
+https://www.w3schools.com/cssref/sel_hover.php  
+
+//Tudo sobre hover
+//Coloque o nome da tag ou class, :hover e coloque o background dentro, está feito.
+
+.a:hover {
+      background-color: #272727;
+}
+
+
+-------------------------------------------------//////////////////////////////------------------------------------------------------ 
+
+--------------------------------------------------- * Manipulando Elementos * -------------------------------------------------------
+
+*ALINHAMENTO DE ÍTENS
+
+
+No elemento PAI, colocar um display flex (CSS)
+
+	display: flex;
+	justify-content: center;      //Para posicionar onde quero - (center = centro)
+	gap: 16px;    			//Vai colocar um espaço externo entre este elemento e outro
+	text-align: center  		//Alinha o texto no centro
+
+--------------------------------
+//Em https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+Mostra tudo sobre posicionamento de elementos.
+
+
+-------------------------------------------------//////////////////////////////------------------------------------------------------ 
+
+--------------------------------------------------- * VARIÁVEIS NO CSS * ------------------------------------------------------------
+
+Usando variáveis no css para não repetir código
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+------------------------------------------------------
+
+Escopo local // vai funcionar só dentro dessa tag
+
+Escopo global // Posso usar em todo o código
+
+:root {
+    --cor-principal: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22d4fd;
+}
+no local onde quero usar, escrevo var() dentro dos parentesis vai a cor.. 
+
+fica assim:
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22d4fd;
+    --cor-hover: #272727; 
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+Todo código que se repete eu posso adicionar aqui e usar como variável para ter um código mais limpo.
+
+
+-------------------------------------------------//////////////////////////////------------------------------------------------------ 
+
+Transformar o site em responsivo
+
+--------------------------------------------------- * UNIDADES DE MEDIDAS * ------------------------------------------------------------
+
+https://www.w3schools.com/cssref/css_units.php#     //Fala sobre unidades de medidas
+
+------------------------------
+existem duas unidades, uma absoluta e a outra relativa, essa relativa que transforma em responsivo
+para isso vamos usar o REM
+
+rem = é uma medida relativa que transforma o root element que é o elemento raiz, isso é, a página HTML.
+
+16 pixels equivale a 1rem - 
+O cálculo é feito assim, vc pega o valor que está em pixel e divide por 16
+ex: 24 / 16 = 1.5rem
+
+O código fica assim:
+
+font-size: 2.25rem;
+
+*IMG
+No caso de imagem eu posso usar porcentagem no width para fazer ela ficar responsiva
+
+--------------------------------------------
+
+estudar Css @media //Ele trabalha com condicionais.
+
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/Media_Queries/Using_media_queries
+
+---------------------------------------------- * Responsividade * 
+
+Para usar faz assim:
+
+@media (max-width: 1200px){                     //Tamanho máximo onde será aplicado
+    .apresentacao{					//Nome da tag onde vai ser aplicado iss 
+        flex-direction: column-reverse;		//Indicando que é para virar uma coluna verticar
+    }
+}
+
+--------------------------------
+
+
+@media (max-width: 1200px){
+    .cabecalho{
+        padding: 10%;
+    }
+    .cabecalho__menu{					//Centralizou o cabeçalho
+        justify-content: center;
+    }
+    .apresentacao{
+        flex-direction: column-reverse;		//È a mesma que eu já tinha mostrado em cima
+        padding: 5%;
+    }
+    .apresentacao__conteudo{				//É necessário colocar o tamanho do conteúdo como automático
+        width: auto;					//Se não ele fica fora da tela.
+    }
+}
+
+
+
+
+
+
